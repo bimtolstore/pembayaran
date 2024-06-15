@@ -68,6 +68,52 @@
         #countdown {
             font-size: 3em;
         }
+                .toggle-button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #45a049;
+        }
+        .catalog {
+            display: none;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .catalog.active {
+            display: flex;
+        }
+        .catalog a {
+            flex: 1 1 calc(50% - 20px); /* Membuat 2 kolom */
+            padding: 20px;
+            font-size: 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .catalog a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .catalog img {
+            width: 24px;
+            height: 24px;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +132,45 @@
         <button class="custom-button" onclick="window.location.href='3.html'">TRANSFER GOPAY</button>
         <button class="custom-button" onclick="window.location.href='4.html'">TRANSFER OVO</button>
         <button class="custom-button" onclick="window.location.href='5.html'">TRANSFER SPAY</button></div><br>
+        <div class="catalog" id="catalog">
+    <a href="1.html" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg" alt="QRIS">
+        QRIS - SEMUA PEMBAYARAN
+    </a>
+    <a href="6.html" target="_blank">
+        <img src="https://epr-indonesia.id/wp-content/uploads/2024/04/Alfamart.webp" alt="ALFA">
+        TOPUP SALDO DI ALFAMART
+    </a>
+    <a href="2.html" target="_blank">
+        <img src="https://assets.jalantikus.com/assets/cache/80/80/apps/2019/04/26/dana-1dd40.png" alt="DANA">
+        TRANSFER DANA
+    </a>
+    <a href="3.html" target="_blank">
+        <img src="https://www.pointstar-consulting.com/wp-content/uploads/2022/02/gopay-integration.png" alt="GOPAY">
+        TRANSFER GOPAY
+    </a>
+    <a href="4.html" target="_blank">
+        <img src="https://dl.memuplay.com/new_market/img/ovo.id.icon.2022-11-28-19-20-33.png" alt="OVO">
+        TRANSFER OVO
+    </a>
+    <a href="5.html" target="_blank">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga8boCkTtQzVmSYUlP0tU_P013CGxRfxH0x5KzqBgJ5XMkGPAJPja6JsxMzPOAQ1ecW4nyZdVcHXaDnTXuTOU0ULdVQUCEqc4MIXskp27C_3UCWeLN30gM_M5Soc1rLl6Y4BUQTieq6vu5D8JXJQTUa8jW5TZCASe0pGIHZnFTl-q6d463Dd5syrvFbA/s320/ShopeePay%20New%20Logo.png" alt="SPAY">
+        TRANSFER SPAY
+    </a>
+</div>
+
+<script>
+    function toggleCatalog() {
+        const catalog = document.getElementById('catalog');
+        const toggleButton = document.querySelector('.toggle-button');
+        catalog.classList.toggle('active');
+        if (catalog.classList.contains('active')) {
+            toggleButton.textContent = 'Lakukan Pembayaran ▲';
+        } else {
+            toggleButton.textContent = 'Lakukan Pembayaran ▼';
+        }
+    }
+</script>
         <p>Nama Toko : @BiStore - Karawang<br>Dibangun sejak : 10 April 2023<br>Nama Pemilik Toko : BIMTOL<br>Jumlah Customer Service : 1 Orang<br>Melayani : Topup Game Genshin Impact, Mobile Legends dan Free Fire, Joki Genshin dan MLBB</p>
         <p>Dilayani oleh,<br> [BIMTOL]</p>
             </script>
