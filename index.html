@@ -62,6 +62,12 @@
             grid-template-columns: auto auto;
             gap: 10px;
         }
+        .countdown {
+            text-align: center;
+        }
+        #countdown {
+            font-size: 3em;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +76,9 @@
         <h1>TAGIHAN PEMBAYARAN</h1><br>
         <p style="font-style: italic; text-align: left; font-size: 16px;">Detail Pembelian :</p>
         <p style="text-align: left; font-size: 15px;">KODE PEMESANAN : BMTLSTR_TESTING<br>TANGGAL PEMESANAN : 01/01/0001<br>PEMBELIAN : JASA JOKI<br>HARGA : Rp100.000<br>DISKON : Rp10.000<br>JUMLAH ITEM : *1<br>TOTAL HARGA : Rp90.000</p>
+        <div class="countdown">
+        <h2 id="countdown"></h2></div>
+        <script src="script.js"></script>
         <p>PILIH METODE PEMBAYARAN :</p>
         <button class="custom-button" onclick="window.location.href='1.html'">BAYAR VIA QRIS</button>
         <div class="button-grid">
