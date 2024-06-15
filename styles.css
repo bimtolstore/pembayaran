@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Jujutsu Kaisen';
-    src: url('Jujutsu Kaisen.ttf') format('truetype'),
+    font-family: 'georgia';
+    src: url('georgia.ttf') format('truetype'),
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Jujutsu Kaisen', sans-serif;
+    font-family: 'georgia', sans-serif;
 }
