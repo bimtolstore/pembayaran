@@ -1,5 +1,5 @@
 // Tanggal akhir untuk countdown (dalam detik)
-const countdownDate = new Date('June 30, 2024 00:00:00').getTime();
+const countdownDate = new Date('June 15, 2024 20:00:00').getTime();
 
 // Memperbarui timer setiap detik
 const timer = setInterval(function() {
