@@ -42,6 +42,18 @@
             border: none;
             border-radius: 14px;
         }
+        input[type="submit"] {
+            background-color: #0000FF;
+            color: white;
+            padding: 15px 32px;
+            border: 20%;
+            border-color: #00FF00;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #00BFFF;
+        }
     </style>
     </head>
 <body>
@@ -51,6 +63,6 @@
         <a href="https://i.ibb.co.com/8Pv0TLH/IMG-20240615-184717.jpg"><img src="https://i.ibb.co.com/8Pv0TLH/IMG-20240615-184717.jpg" alt="GOPAY - BiStore" border="4" width="200px" height="200px" align="center"></a>
         <h4>NOMER GOPAY : 089508984455</h4>
         <p style="text-align: left; font-family: italic; font-size: 12px;">*Mohon kirim GOPAY dengan nominal yang sesuai<br>*Download QR diatas lalu klik tombol dibawah ini dan transfer sesuai nominal</p>
-        <button class="custom-button" onclick="window.location.href='market://details?id=com.gojek.gopay'">BUKA GOPAY</button>
+        <input type="submit" value="BUKA GOPAY" onclick="window.location.href='market://details?id=com.gojek.gopay'"></button>
 </body>
 </html>
