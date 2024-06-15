@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'Altone Trial-Regular';
-    src: url('Altone Trial-Regular.ttf') format('truetype'),
+    font-family: 'Jujutsu Kaisen';
+    src: url('Jujutsu Kaisen.ttf') format('truetype'),
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'Altone Trial-Regular', sans-serif;
+    font-family: 'Jujutsu Kaisen', sans-serif;
 }
