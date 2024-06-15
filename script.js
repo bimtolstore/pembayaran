@@ -23,9 +23,11 @@ const timer = setInterval(function() {
   // Tampilkan hasilnya di elemen dengan id "countdown"
   document.getElementById('countdown').innerHTML = `${minutes}m ${seconds}s`;
 
-  // Jika waktu hitung mundur selesai, tampilkan pesan
+  // Jika waktu hitung mundur selesai, arahkan ke link lain
   if (distance < 0) {
     clearInterval(timer);
     document.getElementById('countdown').innerHTML = 'Waktu sudah habis!';
+    // Arahkan ke link lain (ganti dengan URL yang diinginkan)
+    window.location.href = 'https://mez.ink/bistore';
   }
 }, 1000); // Update setiap 1 detik (1000 milidetik)
