@@ -10,6 +10,7 @@
             background-color: #f0f0f0;
             text-align: center;
             padding: 20px;
+            user-select: none; /* Nonaktifkan pemilihan teks */
         }
         h1 {
             color: #333;
@@ -28,6 +29,7 @@
         img {
             max-width: 100%;
             border-radius: 10px;
+            pointer-events: none; /* Nonaktifkan klik kanan dan seret pada gambar */
         }
         .custom-button {
             background-color: #ff0000;
@@ -65,9 +67,10 @@
         .countdown {
             text-align: center;
             padding: 10px;
-            background-color: #333;
-            color: white;
+            background-color: transparent;
+            color: black;
             display: inline-block;
+            border: 3px solid #000000;
             border-radius: 5px;
             margin: 20px 0;
             font-size: 24px;
@@ -79,7 +82,7 @@
             cursor: pointer;
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #4CAF50;
+            background-color: #0000FF;
             color: white;
             border: none;
             border-radius: 5px;
@@ -87,7 +90,7 @@
             transition: background-color 0.3s;
         }
         .toggle-button:hover {
-            background-color: #45a049;
+            background-color: #0000FF;
         }
         .catalog {
             display: none;
@@ -120,6 +123,7 @@
         .catalog img {
             width: 24px;
             height: 24px;
+            pointer-events: none; /* Nonaktifkan klik kanan dan seret pada gambar */
         }
         table {
             width: 100%;
@@ -130,7 +134,7 @@
         }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
     <div class="container">
         <img src="logo.png" alt="BIMTOL STORE" width="100px" height="100px" style="display: block; margin: 0 auto; border-radius: 50%;">
         <h1>TAGIHAN PEMBAYARAN</h1><br>
@@ -180,7 +184,7 @@
         </table>
         <div id="countdown" class="countdown"></div>
         <script src="timer.js"></script>
-        <p style="text-align: center; font-size: 14px;">HARAP BAYAR SEBELUM WAKTU HABIS!!</p>
+        <b><p style="text-align: center; font-size: 13px;">HARAP BAYAR SEBELUM WAKTU HABIS!!</p></b>
         <button class="toggle-button" onclick="toggleCatalog()">Lakukan Pembayaran ▼</button>
         <div class="catalog" id="catalog">
             <a href="1.html" target="_blank" class="catalog-item">
@@ -204,23 +208,23 @@
                 TRANSFER OVO
             </a>
             <a href="5.html" target="_blank" class="catalog-item">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga8boCkTtQzVmSYUlP0t/AVvXsEga8boCkTtQzVmSYUlP0tU_P013CGxRfxH0x5KzqBgJ5XMkGPAJPja6JsxMzPOAQ1ecW4nyZdVcHXaDnTXuTOU0ULdVQUCEqc4MIXskp27C_3UCWeLN30gM_M5Soc1rLl6Y4BUQTieq6vu5D8JXJQTUa8jW5TZCASe0pGIHZnFTl-q6d463Dd5syrvFbA/s320/ShopeePay%20New%20Logo.png" alt="SPAY">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga8boCkTtQzVmSYUlP0tU_P013CGxRfxH0x5KzqBgJ5XMkGPAJPja6JsxMzPOAQ1ecW4nyZdVcHXaDnTXuTOU0ULdVQUCEqc4MIXskp27C_3UCWeLN30gM_M5Soc1rLl6Y4BUQTieq6vu5D8JXJQTUa8jW5TZCASe0pGIHZnFT">
                 TRANSFER SPAY
             </a>
         </div><br>
         <p style="font-family: monospace; font-style: italic; text-align: center; font-size: 12px;">Layanan Whatsapp @Bistore<br>085716518538 - 089508984455</p>
     </div>
-<script>
-    function toggleCatalog() {
-        const catalog = document.getElementById('catalog');
-        const toggleButton = document.querySelector('.toggle-button');
-        catalog.classList.toggle('active');
-        if (catalog.classList.contains('active')) {
-            toggleButton.textContent = 'Lakukan Pembayaran ▲';
-        } else {
-            toggleButton.textContent = 'Lakukan Pembayaran ▼';
+    <script>
+        function toggleCatalog() {
+            const catalog = document.getElementById('catalog');
+            const toggleButton = document.querySelector('.toggle-button');
+            catalog.classList.toggle('active');
+            if (catalog.classList.contains('active')) {
+                toggleButton.textContent = 'Lakukan Pembayaran ▲';
+            } else {
+                toggleButton.textContent = 'Lakukan Pembayaran ▼';
+            }
         }
-    }
-</script>
+    </script>
 </body>
 </html>
