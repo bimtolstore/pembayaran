@@ -1,10 +1,10 @@
 @font-face {
-    font-family: 'georgia';
-    src: url('georgia.ttf') format('truetype'),
+    font-family: 'SF-Pro-Text-Medium';
+    src: url('SF-Pro-Text-Medium.otf') format('opentype'),
     font-weight: normal;
     font-style: normal;
 }
 
 body {
-    font-family: 'georgia', sans-serif;
+    font-family: 'SF-Pro-Text-Medium', sans-serif;
 }
