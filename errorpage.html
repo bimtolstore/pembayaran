@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ecf0f1;
+            color: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .error-container {
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .error-code {
+            font-size: 70px;
+            margin: 0;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+        .error-message {
+            font-size: 28px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .error-description {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .error-actions a {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            color: #ffffff;
+            background: #3498db;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+        .error-actions a:hover {
+            background: #2980b9;
+            color: #ffffff;
+        }
+        .error-actions a img {
+            margin-right: 10px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <p class="error-message">Halaman tidak ditemukan</p>
+        <p class="error-description">Maaf, pembayaran telah kadaluwarsa, silahkan hubungi customer service @bistore jika ingin mengulang pembayaran</p>
+        <div class="error-actions">
+            <a href="https://wa.me/6289508984455">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo">Hubungi Customer Service
+            </a>
+        </div>
+    </div>
+</body>
+</html>
