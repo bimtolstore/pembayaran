@@ -6,7 +6,7 @@
     <title>Tagihan Pembayaran</title>
     <style>
         body {
-            font-family: georgia.ttf;
+            font-family: Georgia, serif;
             background-color: #f0f0f0;
             text-align: center;
             padding: 20px;
@@ -64,6 +64,13 @@
         }
         .countdown {
             text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 24px;
         }
         #countdown {
             font-size: 3em;
@@ -74,7 +81,7 @@
             font-size: 16px;
             background-color: #4CAF50;
             color: white;
-            border: 6px solid #000000;
+            border: none;
             border-radius: 5px;
             margin-bottom: 20px;
             transition: background-color 0.3s;
@@ -91,7 +98,7 @@
         .catalog.active {
             display: flex;
         }
-        .catalog a {
+        .catalog-item {
             flex: 1 1 calc(50% - 20px); /* Membuat 2 kolom */
             padding: 20px;
             font-size: 16px;
@@ -106,13 +113,20 @@
             gap: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .catalog a:hover {
+        .catalog-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .catalog img {
             width: 24px;
             height: 24px;
+        }
+        table {
+            width: 100%;
+            text-align: left;
+        }
+        td {
+            padding: 5px 0;
         }
     </style>
 </head>
@@ -122,45 +136,75 @@
         <h1>TAGIHAN PEMBAYARAN</h1><br>
         <link rel="stylesheet" href="styles.css">
         <p style="font-style: italic; text-align: left; font-size: 16px;">Detail Pembelian :</p>
-        <p style="text-align: left; font-size: 13px;">
-            KODE PEMBELIAN: BMTLSTR_XXXXXX<br>
-            TANGGAL       : 00/00/0000<br>
-            PEMBELIAN     : ITEM MLBB<br>
-            ID MLBB       : 12345678 (1234)<br>
-            NICK MLBB     : bimtolstore<br>
-            ITEM          : Weekly Diamond Pass<br>
-            HARGA         : Rp26.000<br>
-            DISKON        : -<br>
-            JUMLAH ITEM   : *1<br>
-            TOTAL HARGA   : <b><i>Rp26.000</b></i>
-        </p>
-        <div id="countdown"></div>
+        <table>
+            <tr>
+                <td>KODE PEMBELIAN</td>
+                <td>: BMTLSTR_XXXXXX</td>
+            </tr>
+            <tr>
+                <td>TANGGAL</td>
+                <td>: 00/00/0000</td>
+            </tr>
+            <tr>
+                <td>PEMBELIAN</td>
+                <td>: ITEM MLBB</td>
+            </tr>
+            <tr>
+                <td>ID MLBB</td>
+                <td>: 12345678 (1234)</td>
+            </tr>
+            <tr>
+                <td>NICK MLBB</td>
+                <td>: bimtolstore</td>
+            </tr>
+            <tr>
+                <td>ITEM</td>
+                <td>: Weekly Diamond Pass</td>
+            </tr>
+            <tr>
+                <td>HARGA</td>
+                <td>: Rp26.000</td>
+            </tr>
+            <tr>
+                <td>DISKON</td>
+                <td>: -</td>
+            </tr>
+            <tr>
+                <td>JUMLAH ITEM</td>
+                <td>: *1</td>
+            </tr>
+            <tr>
+                <td>TOTAL HARGA</td>
+                <td>: <b><i>Rp26.000</i></b></td>
+            </tr>
+        </table>
+        <div id="countdown" class="countdown"></div>
         <script src="timer.js"></script>
-        <p style="text-align: center; font-size: 14px>HARAP BAYAR SEBELUM WAKTU HABIS!!</p>
+        <p style="text-align: center; font-size: 14px;">HARAP BAYAR SEBELUM WAKTU HABIS!!</p>
         <button class="toggle-button" onclick="toggleCatalog()">Lakukan Pembayaran ▼</button>
         <div class="catalog" id="catalog">
-            <a href="1.html" target="_blank">
+            <a href="1.html" target="_blank" class="catalog-item">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg" alt="QRIS">
                 QRIS - SEMUA PEMBAYARAN
             </a>
-            <a href="6.html" target="_blank">
+            <a href="6.html" target="_blank" class="catalog-item">
                 <img src="https://epr-indonesia.id/wp-content/uploads/2024/04/Alfamart.webp" alt="ALFA">
                 TOPUP SALDO DI ALFAMART
             </a>
-            <a href="2.html" target="_blank">
+            <a href="2.html" target="_blank" class="catalog-item">
                 <img src="https://assets.jalantikus.com/assets/cache/80/80/apps/2019/04/26/dana-1dd40.png" alt="DANA">
                 TRANSFER DANA
             </a>
-            <a href="3.html" target="_blank">
+            <a href="3.html" target="_blank" class="catalog-item">
                 <img src="https://www.pointstar-consulting.com/wp-content/uploads/2022/02/gopay-integration.png" alt="GOPAY">
                 TRANSFER GOPAY
             </a>
-            <a href="4.html" target="_blank">
+            <a href="4.html" target="_blank" class="catalog-item">
                 <img src="https://dl.memuplay.com/new_market/img/ovo.id.icon.2022-11-28-19-20-33.png" alt="OVO">
                 TRANSFER OVO
             </a>
-            <a href="5.html" target="_blank">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga8boCkTtQzVmSYUlP0tU_P013CGxRfxH0x5KzqBgJ5XMkGPAJPja6JsxMzPOAQ1ecW4nyZdVcHXaDnTXuTOU0ULdVQUCEqc4MIXskp27C_3UCWeLN30gM_M5Soc1rLl6Y4BUQTieq6vu5D8JXJQTUa8jW5TZCASe0pGIHZnFTl-q6d463Dd5syrvFbA/s320/ShopeePay%20New%20Logo.png" alt="SPAY">
+            <a href="5.html" target="_blank" class="catalog-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga8boCkTtQzVmSYUlP0t/AVvXsEga8boCkTtQzVmSYUlP0tU_P013CGxRfxH0x5KzqBgJ5XMkGPAJPja6JsxMzPOAQ1ecW4nyZdVcHXaDnTXuTOU0ULdVQUCEqc4MIXskp27C_3UCWeLN30gM_M5Soc1rLl6Y4BUQTieq6vu5D8JXJQTUa8jW5TZCASe0pGIHZnFTl-q6d463Dd5syrvFbA/s320/ShopeePay%20New%20Logo.png" alt="SPAY">
                 TRANSFER SPAY
             </a>
         </div><br>
