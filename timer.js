@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const countdownElement = document.getElementById('countdown');
-    const redirectUrl = 'wa.me/6289508984455'; // Ganti dengan URL tujuan setelah timer habis
+    const redirectUrl = 'errorpage.html'; // Ganti dengan URL tujuan setelah timer habis
     const totalTime = 2 * 60 * 60 * 1000; // 2 jam dalam milidetik
     const now = new Date().getTime();
 
