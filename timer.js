@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const countdownElement = document.getElementById('countdown');
-    const redirectUrl = 'https://contoh.com'; // Ganti dengan URL tujuan setelah timer habis
+    const redirectUrl = 'wa.me/6289508984455'; // Ganti dengan URL tujuan setelah timer habis
     const totalTime = 2 * 60 * 60 * 1000; // 2 jam dalam milidetik
     const now = new Date().getTime();
 
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (remainingTime <= 0) {
             // Jika waktu sudah habis
-            countdownElement.innerHTML = "Waktu habis!";
-            alert("Waktu habis! Anda akan diarahkan ke halaman lain.");
+            countdownElement.innerHTML = "Pembayaran gagal!";
+            alert("Pembayaran telah kalduwarsa! silahkan hubungi admin jika ingin mengulangi pembayaran!!");
             localStorage.removeItem('endTime');
             window.location.href = redirectUrl;
         } else {
