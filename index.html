@@ -69,11 +69,13 @@
             font-size: 3em;
         }
         .toggle-button {
+        }
+        .toggle-button {
             cursor: pointer;
             padding: 10px 20px;
             font-size: 16px;
             background-color: #4CAF50;
-            color: green;
+            color: white;
             border: none;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -166,17 +168,17 @@
         </div><br>
         <p style="font-family: monospace; font-style: italic; text-align: center; font-size: 12px;">Layanan Whatsapp @Bistore<br>085716518538 - 089508984455</p>
     </div>
-    <script>
-        function toggleCatalog() {
-            const catalog = document.getElementById('catalog');
-            const toggleButton = document.querySelector('.toggle-button');
-            catalog.classList.toggle('active');
-            if (catalog.classList.contains('active')) {
-                toggleButton.textContent = 'Lakukan Pembayaran ▲';
-            } else {
-                toggleButton.textContent = 'Lakukan Pembayaran ▼';
-            }
+<script>
+    function toggleCatalog() {
+        const catalog = document.getElementById('catalog');
+        const toggleButton = document.querySelector('.toggle-button');
+        catalog.classList.toggle('active');
+        if (catalog.classList.contains('active')) {
+            toggleButton.textContent = 'Lakukan Pembayaran ▲';
+        } else {
+            toggleButton.textContent = 'Lakukan Pembayaran ▼';
         }
-    </script>
+    }
+</script>
 </body>
 </html>
