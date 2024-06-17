@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiStore</title>
+    <style>
+        html {
+            scroll-behavior: smooth; /* Smooth scroll behavior */
+        }
+        
+        body {
+            font-family: SF-Pro-Text-Medium, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            user-select: none; /* Disable text selection */
+        }
+
+        header {
+            background-color: #2F4F4F;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px; /* Adjust size as needed */
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .nav-toggle {
+            cursor: pointer;
+            display: none; /* hide by default on larger screens */
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            text-align: center;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .catalog-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .catalog-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .catalog-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .catalog-item-content {
+            padding: 15px;
+        }
+
+        .catalog-item-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .catalog-item-description {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 15px;
+        }
+
+        .catalog-item-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2F4F4F;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .catalog-item-button:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            user-select: none; /* Disable text selection in footer */
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-toggle {
+                display: block; /* show hamburger menu on smaller screens */
+            }
+
+            nav ul {
+                display: none; /* hide nav items by default on smaller screens */
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                left: 0;
+                z-index: 1000;
+            }
+
+            nav ul.active {
+                display: flex; /* show nav items when active class is added */
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+
+            .nav-toggle {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+        table {
+            width: 100%;
+            text-align: left;
+        }
+        td {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo" width="40">
+        <h1>BiStore</h1>
+    </div>
+    <div class="nav-toggle">&#9776;</div>
+    <nav>
+        <ul>
+            <li><a href="#home">Topup Game</a></li>
+            <li><a href="#catalog">Joki Game</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#contact">Customer Service</a></li>
+        </ul>
+    </nav>
+</header>
+
+        <link rel="stylesheet" href="styles.css">
+<div class="container">
+    <h2 id="home">Menu Topup</h2>
+    <div class="catalog-container">
+        <div class="catalog-item">
+            <img src="https://via.placeholder.com/300x200" alt="Item 1">
+            <div class="catalog-item-content">
+                <h3 class="catalog-item-title">Topup Mobile Legends</h3>
+                <p class="catalog-item-description">Topup Diamond, Weekly Diamond Pass, Starlight Member, Gift Charisma</p>
+                <a href="https://mez.ink/bmtlstr/mobilelegends" class="catalog-item-button">BUKA SEKARANG</a>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="https://via.placeholder.com/300x200" alt="Item 2">
+            <div class="catalog-item-content">
+                <h3 class="catalog-item-title">Topup Genshin Impact</h3>
+                <p class="catalog-item-description">Topup Crystal Genesis, Blessing Of The Welkin Moon</p>
+                <a href="https://mez.ink/bmtlstr.genshin/gi" class="catalog-item-button">BUKA SEKARANG</a>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="https://via.placeholder.com/300x200" alt="Item 3">
+            <div class="catalog-item-content">
+                <h3 class="catalog-item-title">Topup Free Fire</h3>
+                <p class="catalog-item-description">Topup Diamond, Member mingguan, Member bulanan, Level up pass</p>
+                <a href="https://mez.ink/bmtlstrff/freefire" class="catalog-item-button">BUKA SEKARANG</a><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 id="catalog">Menu Joki</h2>
+    <div class="catalog-container">
+        <div class="catalog-item">
+            <img src="https://via.placeholder.com/300x200" alt="Item 1">
+            <div class="catalog-item-content">
+                <h3 class="catalog-item-title">Joki Genshin Impact</h3>
+                <p class="catalog-item-description">Joki daily, Joki Quest, Joki Level Up, Joki Event</p>
+                <a href="https://mez.ink/joki.genshin/joki" class="catalog-item-button">BUKA SEKARANG</a>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="https://via.placeholder.com/300x200" alt="Item 2">
+            <div class="catalog-item-content">
+                <h3 class="catalog-item-title">Paket Membership Genshin Impact</h3>
+                <p class="catalog-item-description">Join membership mendapat keuntungan lebih besar!!</p>
+                <a href="https://mez.ink/paketjokigi/gi" class="catalog-item-button">BUKA SEKARANG</a>
+            </div>
+        </div>
+        <div class="catalog-item">
+            <img src="https://via.placeholder.com/300x200" alt="Item 3">
+            <div class="catalog-item-content">
+                <h3 class="catalog-item-title">Joki Mobile Legends: Bang Bang</h3>
+                <p class="catalog-item-description">Joki Rank, Joki Classic, Joki Gendong</p>
+                <a href="https://wa.me/6285716518538" class="catalog-item-button">BUKA SEKARANG</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="container">
+    <h2>Tentang Kami</h2>
+        <img src="logo.png" alt="BIMTOL STORE" width="100px" height="100px" style="display: block; margin: 0 auto; border-radius: 50%;">
+        <table>
+            <tr>
+                <td>Nama Toko</td>
+                <td>: BiStore</td>
+            </tr>
+            <tr>
+                <td>Tanggal Didirikan</td>
+                <td>: 12/04/2022</td>
+            </tr>
+            <tr>
+                <td>Oleh</td>
+                <td>: Bimtol</td>
+            </tr>
+            <tr>
+                <td>Melayani</td>
+                <td>: Topup dan Joki</td>
+            </tr>
+            <tr>
+                <td>Jumlah Pekerja</td>
+                <td>: Tidak ada untuk saat ini</td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td>: Jln. Hs Ronggo Waluyo, Karawang</td>
+            </tr>
+        </table>
+</div>
+
+<div id="contact" class="container">
+    <h2>Customer Service</h2>
+    <p>Jika Anda memiliki pertanyaan atau membutuhkan bantuan, jangan ragu untuk menghubungi kami. Kami akan dengan senang hati membantu Anda!</p>
+    <p>Email: bimtolstore@gmail.com</p>
+    <p>Whatsapp: +62 8571 6518 538</p>
+</div>
+<br>
+       <p style="font-family: monospace; font-style: italic; text-align: center; font-size: 12px;">&copy; 2024 BiStore. All rights reserved.</p>
+
+<script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+    });
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
