@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagihan Pembayaran</title>
+    <style>
+        body {
+            font-family: SF-Pro-Text-Medium, serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+            user-select: none; /* Nonaktifkan pemilihan teks */
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            pointer-events: none; /* Nonaktifkan klik kanan dan seret pada gambar */
+        }
+        .custom-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 12px 29px;
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 14px;
+        }
+        .custom-button1 {
+            background-color: transparent;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-family: sans-serif;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: 5px solid #000000;
+            border-radius: 14px;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 10px;
+        }
+        .countdown {
+            text-align: center;
+            padding: 10px;
+            background-color: transparent;
+            color: black;
+            display: inline-block;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 24px;
+        }
+        #countdown {
+            font-size: 3em;
+        }
+        .toggle-button {
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0000FF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #0000FF;
+        }
+        .catalog {
+            display: none;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .catalog.active {
+            display: flex;
+        }
+        .catalog-item {
+            flex: 1 1 calc(50% - 20px); /* Membuat 2 kolom */
+            padding: 20px;
+            font-size: 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .catalog img {
+            width: 24px;
+            height: 24px;
+            pointer-events: none; /* Nonaktifkan klik kanan dan seret pada gambar */
+        }
+        table {
+            width: 100%;
+            text-align: left;
+        }
+        td {
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+    <div class="container">
+        <img src="logo.png" alt="BIMTOL STORE" width="100px" height="100px" style="display: block; margin: 0 auto; border-radius: 50%;">
+        <h1>TAGIHAN PEMBAYARAN</h1><br>
+        <link rel="stylesheet" href="styles.css">
+        <p style="font-style: italic; text-align: left; font-size: 16px;">Detail Pembelian :</p>
+        <table>
+            <tr>
+                <td>KODE PEMBELIAN</td>
+                <td>: BMTLSTR_XXXXXX</td>
+            </tr>
+            <tr>
+                <td>TANGGAL</td>
+                <td>: 21/06/2024</td>
+            </tr>
+            <tr>
+                <td>PEMBELIAN</td>
+                <td>: JOKI MLBB</td>
+            </tr>
+            <tr>
+                <td>ID MLBB</td>
+                <td>: -</td>
+            </tr>
+            <tr>
+                <td>NICK MLBB</td>
+                <td>: SkyLine</td>
+            </tr>
+            <tr>
+                <td>ITEM</td>
+                <td>: Joki Rank Legend 25 Bintang</td>
+            </tr>
+            <tr>
+                <td>HARGA</td>
+                <td>: Rp125.000</td>
+            </tr>
+            <tr>
+                <td>DISKON</td>
+                <td>: 25%</td>
+            </tr>
+            <tr>
+                <td>JUMLAH ITEM</td>
+                <td>: *25</td>
+            </tr>
+            <tr>
+                <td>TOTAL HARGA</td>
+                <td>: <b><i>Rp93.750</i></b></td>
+            </tr>
+        </table>
+        <div id="countdown" class="countdown"></div>
+        <script src="timer.js"></script>
+        <b><p style="text-align: center; font-size: 13px;">HARAP BAYAR SEBELUM WAKTU HABIS!!</p></b>
+        <button class="toggle-button" onclick="toggleCatalog()">Lakukan Pembayaran ▼</button>
+        <div class="catalog" id="catalog">
+            <a href="1.html" target="_blank" class="catalog-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg" alt="QRIS">
+                QRIS - SEMUA PEMBAYARAN
+            </a>
+            <a href="6.html" target="_blank" class="catalog-item">
+                <img src="https://epr-indonesia.id/wp-content/uploads/2024/04/Alfamart.webp" alt="ALFA">
+                TOPUP SALDO DI ALFAMART
+            </a>
+            <a href="2.html" target="_blank" class="catalog-item">
+                <img src="https://assets.jalantikus.com/assets/cache/80/80/apps/2019/04/26/dana-1dd40.png" alt="DANA">
+                TRANSFER DANA
+            </a>
+            <a href="3.html" target="_blank" class="catalog-item">
+                <img src="https://www.pointstar-consulting.com/wp-content/uploads/2022/02/gopay-integration.png" alt="GOPAY">
+                TRANSFER GOPAY
+            </a>
+            <a href="4.html" target="_blank" class="catalog-item">
+                <img src="https://dl.memuplay.com/new_market/img/ovo.id.icon.2022-11-28-19-20-33.png" alt="OVO">
+                TRANSFER OVO
+            </a>
+            <a href="5.html" target="_blank" class="catalog-item">
+                <img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/01gmcht2rn92exshy86qbg13cd.png">
+                TRANSFER SPAY
+            </a>
+        </div><br>
+        <p style="font-family: monospace; font-style: italic; text-align: center; font-size: 12px;">Layanan Whatsapp @Bistore<br>085716518538 - 089508984455</p>
+    </div>
+    <script>
+        function toggleCatalog() {
+            const catalog = document.getElementById('catalog');
+            const toggleButton = document.querySelector('.toggle-button');
+            catalog.classList.toggle('active');
+            if (catalog.classList.contains('active')) {
+                toggleButton.textContent = 'Lakukan Pembayaran ▲';
+            } else {
+                toggleButton.textContent = 'Lakukan Pembayaran ▼';
+            }
+        }
+    </script>
+</body>
+</html>
